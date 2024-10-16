@@ -4,18 +4,19 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Storage;
 
 
 class Image extends Model
 {
 
     use HasFactory;
-    protected $fillable = [   "image_id",
-    "image_path",
-    "image_create_at",
-    "image_update_at"]; 
+    use HasFactory;use HasFactory;
+    protected $fillable = ['path'];
     
-    protected $primaryKey = "id";
-    protected $table = "img_table";
-    public $timestamps = false;
+    // Nếu bạn muốn sử dụng đường dẫn đầy đủ thay vì đường dẫn tương đối
+    public function getUrlAttribute()
+    {
+        return Storage::url($this->path);
+    }
 }

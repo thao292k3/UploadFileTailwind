@@ -7,4 +7,4 @@ Route::get('/upload', function () {
     return view('upload');
 });
 
-Route::post('upload', [FileUploadController::class, 'upload'])->name('upload');
+Route::post('/upload', [FileUploadController::class, 'upload'])->name('upload');

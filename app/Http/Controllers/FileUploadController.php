@@ -16,7 +16,7 @@ class FileUploadController extends Controller
         ]);
 
         // Lưu ảnh vào thư mục 'public/images'
-        $path = $request->file('image')->store('public/images');
+        $path = $request->file('image')->store('public/image');
 
         // Lưu đường dẫn ảnh vào CSDL
         $image = new Image();
